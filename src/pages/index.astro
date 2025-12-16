@@ -240,7 +240,7 @@
                         <!-- Testimonial kept for emotional appeal -->
                         “LambBox 彻底改变了我的工作方式。它不仅仅是存储，它是我数字世界的第二大脑。”
                     </blockquote>
-                    <p class="font-semibold text-lg text-gray-300">— 张薇，独立设计师</p>
+                    <p class="semibold text-lg text-gray-300">— 张薇，独立设计师</p>
                 </div>
                 
                 <!-- Product Image (Replaced Placeholder) -->
@@ -292,13 +292,20 @@
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        // Use a short delay for features to appear staggered
-                        const delay = entry.target.style.transitionDelay ? parseFloat(entry.target.style.transitionDelay) * 1000 : 0;
-                        setTimeout(() => {
-                             entry.target.classList.add('visible');
-                        }, delay);
-                        observer.unobserve(entry.target);
+                        const target = entry.target;
+
+                        // 确保目标是 HTMLElement 才能安全访问 .style 属性
+                        if (target instanceof HTMLElement) {
+                            // 使用行内 transition-delay 值来实现错开的动画效果
+                            const delay = target.style.transitionDelay ? parseFloat(target.style.transitionDelay) * 1000 : 0;
+                            
+                            // 仅在延迟后添加 'visible' 类
+                            setTimeout(() => {
+                                target.classList.add('visible');
+                            }, delay);
+                            
+                            observer.unobserve(target);
+                        }
                     }
                 });
             }, observerOptions);
