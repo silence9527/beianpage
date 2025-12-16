@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LambBox - 精致的记忆与物品收纳小程序</title>
+<title>简单起始页 | LambBox</title>
 <!-- Load Tailwind CSS - 修复了错误的链接 -->
 <script src="https://www.google.com/search?q=https://cdn.tailwindcss.com"></script>
 <!-- Load Inter Font - 修复了错误的链接 -->
@@ -22,55 +22,54 @@ transition: background-color 0.5s ease;
 max-width: 1200px;
 }
 
-    /* 1. Hero 背景深度与动画 */
-    .hero-bg {
-        /* 添加径向渐变，增强深度感 */
-        background: radial-gradient(circle at 50% 10%, #1a1a2e 0%, #0d0d15 70%);
-        position: relative;
-        overflow: hidden;
-    }
-    /* 英雄区域的光晕元素 */
-    .hero-glow {
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        background: #4f46e5; /* Indigo color */
-        opacity: 0.1;
-        filter: blur(100px);
-        border-radius: 50%;
-        /* 呼吸动画 */
-        animation: pulse 6s infinite alternate;
-        top: 10%;
-        left: 10%;
-        z-index: 0;
-    }
-    @keyframes pulse {
-        0% { transform: scale(1) translate(0, 0); opacity: 0.1; }
-        100% { transform: scale(1.1) translate(10px, 10px); opacity: 0.2; }
-    }
+/* 1. Hero 背景深度与动画 /
+.hero-bg {
+/ 添加径向渐变，增强深度感 /
+background: radial-gradient(circle at 50% 10%, #1a1a2e 0%, #0d0d15 70%);
+position: relative;
+overflow: hidden;
+}
+/ 英雄区域的光晕元素 /
+.hero-glow {
+position: absolute;
+width: 300px;
+height: 300px;
+background: #4f46e5; / Indigo color /
+opacity: 0.1;
+filter: blur(100px);
+border-radius: 50%;
+/ 呼吸动画 */
+animation: pulse 6s infinite alternate;
+top: 10%;
+left: 10%;
+z-index: 0;
+}
+@keyframes pulse {
+0% { transform: scale(1) translate(0, 0); opacity: 0.1; }
+100% { transform: scale(1.1) translate(10px, 10px); opacity: 0.2; }
+}
 
-    /* 2. 增强按钮样式 */
-    .action-button {
-        box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4); /* 初始阴影 */
-        transition: all 0.3s ease-out;
-    }
-    .action-button:hover {
-        box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6); /* 悬停时更强的阴影 */
-        background-color: #4f46e5; /* 更深的靛蓝色 */
-    }
+/* 2. 增强按钮样式 /
+.action-button {
+box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4); / 初始阴影 /
+transition: all 0.3s ease-out;
+}
+.action-button:hover {
+box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6); / 悬停时更强的阴影 /
+background-color: #4f46e5; / 更深的靛蓝色 */
+}
 
-    /* 3. 卡片悬停效果 (升起 + 边框高亮) */
-    .info-card {
-        transition: all 0.3s ease-in-out;
-        border-color: #374151; /* 初始边框颜色 */
-    }
-    .info-card:hover {
-        transform: translateY(-5px);
-        border-color: #6366f1; /* 悬停时靛蓝色高亮 */
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(99, 102, 241, 0.3);
-    }
+/* 3. 卡片悬停效果 (升起 + 边框高亮) /
+.info-card {
+transition: all 0.3s ease-in-out;
+border-color: #374151; / 初始边框颜色 /
+}
+.info-card:hover {
+transform: translateY(-5px);
+border-color: #6366f1; / 悬停时靛蓝色高亮 */
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(99, 102, 241, 0.3);
+}
 </style>
-
 
 </head>
 <body class="antialiased min-h-screen flex flex-col">
@@ -96,11 +95,11 @@ Simple<span class="text-indigo-400">Page</span>
 <div class="max-w-3xl z-10">
 <!-- 标题，使用渐变色 -->
 <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-white">
-欢迎来到LambBox
+欢迎来到您的新网站
 </h1>
 <!-- 简洁的副标题 -->
 <p class="text-xl md:text-2xl text-gray-400 mb-10">
-LambBox——将记忆变得轻松而精致，让收纳成为生活的一部分。
+这是一个简洁而现代的起始页面，使用 Tailwind CSS 构建，风格为暗黑系。
 </p>
 <!-- 动作按钮 - 增加了 action-button 类 -->
 <button class="px-8 py-3 bg-indigo-600 text-white font-semibold rounded-xl shadow-xl hover:bg-indigo-700 transform hover:scale-105 action-button">
@@ -125,7 +124,7 @@ LambBox——将记忆变得轻松而精致，让收纳成为生活的一部分�
 <div class="bg-gray-800 rounded-2xl p-6 shadow-2xl border border-gray-700 transition duration-300 info-card">
 <div class="text-3xl text-green-400 mb-3">🛡️</div>
 <h3 class="text-xl font-semibold mb-2">高安全</h3>
-<p class="text-gray-400 text-sm">内置行业领先的安全措施，保护您的收纳数据。</p>
+<p class="text-gray-400 text-sm">内置行业领先的安全措施，保护您的数据。</p>
 </div>
 <!-- 卡片 3 - 增加了 info-card 类，修改了圆角 -->
 <div class="bg-gray-800 rounded-2xl p-6 shadow-2xl border border-gray-700 transition duration-300 info-card">
@@ -141,10 +140,23 @@ LambBox——将记忆变得轻松而精致，让收纳成为生活的一部分�
 
 <footer class="bg-gray-900 py-6 mt-auto border-t border-gray-800">
 <div class="container mx-auto px-4 text-center">
-<p class="text-gray-500 text-sm">
+<p class="text-gray-500 text-sm mb-2">
 © 2025 SimplePage | 保留所有权利。
-<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">ICP备案号：陇ICP备2025023344号-2</a>&nbsp;  &nbsp;| &nbsp; <img src="https://beian.mps.gov.cn/web/assets/logo01.6189a29f.png" width="15"/> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=62010202004801" rel="noreferrer" target="_blank">甘公网安备62010202004801号</a>
 </p>
+<!-- 新增：备案信息 -->
+<div class="text-gray-500 text-xs flex justify-center items-center">
+<!-- ICP 备案 -->
+<a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener" class="hover:text-gray-400 transition">
+ICP备案号：陇ICP备2025023344号-2
+</a>
+<span class="mx-2 text-gray-600">|</span>
+<!-- 公安备案图标 -->
+<img src="https://beian.mps.gov.cn/web/assets/logo01.6189a29f.png" width="15" alt="公安备案图标" class="inline-block mr-1"/>
+<!-- 公安备案文本，并确保图标和文本之间有空格 -->
+<a href="https://beian.mps.gov.cn/#/query/webSearch?code=62010202004801" rel="noreferrer" target="_blank" class="hover:text-gray-400 transition">
+甘公网安备62010202004801号
+</a>
+</div>
 </div>
 </footer>
 
