@@ -1,321 +1,96 @@
 <!DOCTYPE html>
+
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LambBox | 您的下一代智能存储</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <style>
-        /* Custom CSS for the cool glowing effect and smooth scrolling */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a; /* Deep dark background */
-            color: #e5e7eb;
-            scroll-behavior: smooth;
-        }
-
-        /* Hero section background gradient and subtle animation (Enhanced with Dot/Grid) */
-        .hero-bg {
-            /* Existing radial gradient, plus a subtle grid overlay for tech look */
-            background: 
-                radial-gradient(circle at 50% 10%, #171717 0%, #0a0a0a 60%),
-                repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0px, transparent 1px, transparent 100px),
-                repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0px, transparent 1px, transparent 100px);
-            background-size: 100% 100%, 100px 100px, 100px 100px;
-            animation: gradient-shift 15s ease infinite;
-        }
-
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        /* New: Logo Pulsating Glow Effect */
-        .logo-glow-pulse {
-            position: relative;
-            display: inline-block;
-        }
-
-        .logo-glow-pulse::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -20px;
-            right: -20px;
-            bottom: -10px;
-            border-radius: 9999px;
-            background: rgba(59, 130, 246, 0.6); /* Stronger blue glow */
-            filter: blur(15px);
-            z-index: -1;
-            animation: pulse-border 4s infinite cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        @keyframes pulse-border {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 0.1;
-            }
-            50% {
-                transform: scale(1.05);
-                opacity: 0.4;
-            }
-        }
-        
-        /* New: Product Image Neon Pulse */
-        .product-image-container {
-            transition: all 0.5s;
-            /* Initial glow styling */
-            box-shadow: 0 0 50px rgba(59, 130, 246, 0.5), 0 0 10px rgba(59, 130, 246, 0.3);
-            animation: neon-pulse 3s infinite alternate;
-        }
-
-        @keyframes neon-pulse {
-            0% {
-                box-shadow: 0 0 50px rgba(59, 130, 246, 0.5), 0 0 10px rgba(59, 130, 246, 0.3);
-                transform: scale(1);
-            }
-            100% {
-                box-shadow: 0 0 70px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.5);
-                transform: scale(1.01);
-            }
-        }
-        
-        /* New: Slogan Text Pulse Effect */
-        .slogan-pulse {
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-            animation: text-pulse 3s infinite alternate;
-        }
-        @keyframes text-pulse {
-            0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(59, 130, 246, 0.2); }
-            100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(59, 130, 246, 0.5); }
-        }
-
-        /* New: Feature Card Float Animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        
-        /* Card hover effect (Existing) */
-        .feature-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-            border: 1px solid transparent;
-            /* Add permanent float animation */
-            animation: float 5s infinite ease-in-out;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3), 0 4px 6px -4px rgba(59, 130, 246, 0.2);
-            border-color: #3b82f6;
-            animation-play-state: paused; /* Pause float on hover */
-        }
-
-        /* New: Navigation Link Underline Glow */
-        .nav-link-glow {
-            position: relative;
-        }
-        .nav-link-glow::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: #3b82f6;
-            box-shadow: 0 0 8px #3b82f6, 0 0 15px rgba(59, 130, 246, 0.5);
-            transition: width 0.3s ease-in-out;
-        }
-        .nav-link-glow:hover::after {
-            width: 100%;
-        }
-
-
-        /* Scroll Animation Class (Existing) */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .scroll-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>简单起始页 | LambBox</title>
+<!-- Load Tailwind CSS -->
+<script src="https://www.google.com/search?q=https://cdn.tailwindcss.com"></script>
+<!-- Load Inter Font -->
+<link href="https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DInter:wght%40400%3B700%3B800%26display%3Dswap" rel="stylesheet">
+<style>
+/* 保持深色背景和字体 /
+body {
+font-family: 'Inter', sans-serif;
+background-color: #0d0d15; / 略带深蓝色的深色背景 /
+color: #f3f4f6;
+}
+/ 基础容器居中 */
+.container {
+max-width: 1200px;
+}
+</style>
 </head>
-<body class="antialiased">
+<body class="antialiased min-h-screen flex flex-col">
 
-    <!-- Header / Navigation -->
-    <header class="sticky top-0 z-50 bg-black/80 backdrop-blur-sm shadow-xl border-b border-gray-800">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-extrabold text-white tracking-widest">
-                Lamb<span class="text-blue-500">Box</span>
-            </a>
-            <nav class="hidden md:flex space-x-8">
-                <!-- Added nav-link-glow class -->
-                <a href="#features" class="text-gray-300 hover:text-blue-400 transition duration-300 nav-link-glow">核心功能</a>
-                <a href="#security" class="text-gray-300 hover:text-blue-400 transition duration-300 nav-link-glow">用户见证</a>
-            </nav>
+<!-- 导航栏 -->
+<header class="bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="text-2xl font-extrabold text-white tracking-wider">
+            Simple<span class="text-indigo-400">Page</span>
         </div>
-    </header>
+        <nav class="space-x-6">
+            <a href="#hero" class="text-gray-400 hover:text-indigo-400 transition duration-200">首页</a>
+            <a href="#info" class="text-gray-400 hover:text-indigo-400 transition duration-200">更多信息</a>
+        </nav>
+    </div>
+</header>
 
-    <!-- 1. Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center justify-center pt-24 pb-16 relative overflow-hidden">
-        <!-- Background Grid and Glow -->
-        <div class="absolute inset-0 z-0 opacity-10 [background-image:linear-gradient(to_right,#4444441a_1px,transparent_1px),linear-gradient(to_bottom,#4444441a_1px,transparent_1px)] bg-[size:30px_30px]"></div>
-        <div class="absolute w-96 h-96 bg-blue-500/30 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+<!-- 1. 英雄区域 (Hero Section) -->
+<main class="flex-grow flex items-center justify-center text-center py-20 px-4" id="hero">
+    <div class="max-w-3xl">
+        <!-- 标题，使用渐变色 -->
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 to-white">
+            欢迎来到您的新网站
+        </h1>
+        <!-- 简洁的副标题 -->
+        <p class="text-xl md:text-2xl text-gray-400 mb-10">
+            这是一个简洁而现代的起始页面，使用 Tailwind CSS 构建，风格为暗黑系。
+        </p>
+        <!-- 动作按钮 -->
+        <button class="px-8 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-xl hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+            开始探索
+        </button>
+    </div>
+</main>
 
-        <div class="container mx-auto px-4 text-center z-10">
-            <!-- Added logo-glow-pulse class for the breathing light effect -->
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-white scroll-reveal logo-glow-pulse">
-                LambBox
-            </h1>
-            <!-- UPDATED SUBTITLE -->
-            <p class="text-xl md:text-3xl text-gray-300 mb-8 scroll-reveal" style="transition-delay: 0.2s;">
-                您的数字记忆与珍藏物品智能收纳空间
-            </p>
-            
-            <!-- Slogan INTEGRATION - Added slogan-pulse class -->
-            <p class="max-w-4xl mx-auto text-2xl font-light italic text-white mb-10 scroll-reveal slogan-pulse" style="transition-delay: 0.4s;">
-                将记忆变得轻松而精致，让收纳成为生活的一部分。
-            </p>
-
-            <!-- Removed '立即预购' button -->
-        </div>
-    </section>
-
-    <!-- 2. Features Section -->
-    <section id="features" class="py-20 md:py-32 bg-[#0c0c0c] overflow-hidden">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white scroll-reveal">核心功能</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Feature 1: Instant Memory Sync - Staggered float animation -->
-                <div class="feature-card bg-gray-900 rounded-2xl p-8 scroll-reveal" style="animation-delay: 0s;">
-                    <div class="text-4xl text-blue-400 mb-4">
-                        <!-- Sync Icon SVG -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"></path><path d="M12 18v4"></path><path d="M4.93 4.93l2.83 2.83"></path><path d="M16.24 16.24l2.83 2.83"></path><path d="M2 12h4"></path><path d="M18 12h4"></path><path d="M4.93 19.07l2.83-2.83"></path><path d="M16.24 7.76l2.83-2.83"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-3 text-white">记忆瞬时同步</h3>
-                    <p class="text-gray-400">无论是照片、视频还是日记，通过小程序实现超低延迟的云端同步，确保您的每一份珍贵记忆都安全、即时地备份。</p>
-                </div>
-
-                <!-- Feature 2: Smart Digital/Physical Item Management - Staggered float animation -->
-                <div class="feature-card bg-gray-900 rounded-2xl p-8 scroll-reveal" style="transition-delay: 0.2s; animation-delay: 1.5s;">
-                    <div class="text-4xl text-green-400 mb-4">
-                        <!-- Box Icon with Brain SVG -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 10a1.5 1.5 0 0 0 0 4M21.5 10a1.5 1.5 0 0 0 0 4M10 2a1.5 1.5 0 0 0 4 0M10 22a1.5 1.5 0 0 0 4 0"></path><rect x="3" y="6" width="18" height="12" rx="2" ry="2"></rect><path d="M8 12h8"></path><path d="M12 8v8"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-3 text-white">数字/实物智能管理</h3>
-                    <p class="text-gray-400">AI 自动识别数字文件内容，同时通过标签系统，精准定位您的实体收纳物品。'记忆'和'物品'，双重管理，高效便捷。</p>
-                </div>
-
-                <!-- Feature 3: Military-Grade Security - Staggered float animation -->
-                <div class="feature-card bg-gray-900 rounded-2xl p-8 scroll-reveal" style="transition-delay: 0.4s; animation-delay: 3s;">
-                    <div class="text-4xl text-red-400 mb-4">
-                        <!-- Lock Icon SVG -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-3 text-white">军工级安全</h3>
-                    <p class="text-gray-400">采用端到端 AES-256 加密，确保您的数字资产和隐私安全。所有收纳数据，只有您才能访问。</p>
-                </div>
+<!-- 2. 信息区域 (Info Section) -->
+<section id="info" class="py-16 bg-[#181825]">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-white mb-10">核心价值</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- 卡片 1 -->
+            <div class="bg-gray-800 rounded-xl p-6 shadow-2xl border border-gray-700 hover:border-indigo-500 transition duration-300">
+                <div class="text-3xl text-indigo-400 mb-3">🚀</div>
+                <h3 class="text-xl font-semibold mb-2">高性能</h3>
+                <p class="text-gray-400 text-sm">提供闪电般的加载速度和卓越的用户体验。</p>
+            </div>
+            <!-- 卡片 2 -->
+            <div class="bg-gray-800 rounded-xl p-6 shadow-2xl border border-gray-700 hover:border-indigo-500 transition duration-300">
+                <div class="text-3xl text-green-400 mb-3">🛡️</div>
+                <h3 class="text-xl font-semibold mb-2">高安全</h3>
+                <p class="text-gray-400 text-sm">内置行业领先的安全措施，保护您的数据。</p>
+            </div>
+            <!-- 卡片 3 -->
+            <div class="bg-gray-800 rounded-xl p-6 shadow-2xl border border-gray-700 hover:border-indigo-500 transition duration-300">
+                <div class="text-3xl text-yellow-400 mb-3">🛠️</div>
+                <h3 class="text-xl font-semibold mb-2">易于定制</h3>
+                <p class="text-gray-400 text-sm">简洁的结构使二次开发和定制变得轻松。</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- 3. Testimonial / Product Showcase -->
-    <section id="security" class="py-20 md:py-32 bg-black">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
-                <!-- Text Content -->
-                <div class="md:w-1/2 scroll-reveal">
-                    <p class="text-sm uppercase tracking-widest text-blue-500 font-semibold mb-3">用户反馈</p>
-                    <blockquote class="text-3xl md:text-4xl font-light italic mb-6 text-white leading-snug">
-                        <!-- Testimonial kept for emotional appeal -->
-                        “LambBox 彻底改变了我的工作方式。它不仅仅是存储，它是我数字世界的第二大脑。”
-                    </blockquote>
-                    <p class="semibold text-lg text-gray-300">— 张薇，独立设计师</p>
-                </div>
-                
-                <!-- Product Image (Replaced Placeholder) -->
-                <div class="md:w-1/2 w-full flex justify-center scroll-reveal" style="transition-delay: 0.2s;">
-                    <!-- Added product-image-container class for the neon pulse effect -->
-                    <img src="http://googleusercontent.com/image_generation_content/0" 
-                         alt="LambBox 小程序界面截图" 
-                         class="w-full max-w-sm rounded-3xl object-contain border-4 border-blue-500/50 product-image-container">
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- 底部 -->
+<footer class="bg-gray-900 py-6 mt-auto border-t border-gray-800">
+    <div class="container mx-auto px-4 text-center">
+        <p class="text-gray-500 text-sm">
+            © 2025 SimplePage | 保留所有权利。
+        </p>
+    </div>
+</footer>
 
-    <!-- Footer -->
-    <footer class="bg-black py-10">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex justify-center space-x-6 mb-6">
-                <a href="#" class="text-gray-500 hover:text-blue-400 transition duration-300 text-sm nav-link-glow">隐私政策</a>
-                <a href="#" class="text-gray-500 hover:text-blue-400 transition duration-300 text-sm nav-link-glow">服务条款</a>
-                <a href="mailto:contact@lambbox.com" class="text-gray-500 hover:text-blue-400 transition duration-300 text-sm nav-link-glow">联系我们</a>
-            </div>
-            
-            <p class="text-gray-600 text-xs mb-1">
-                © 2025 LambBox, All rights reserved.
-            </p>
-            
-            <!-- ICP and Security Filings - MANDATORY REQUIREMENT -->
-            <div class="text-gray-500 text-xs">
-                <a href="http://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">
-                    ICP备案号：陇ICP备2025023344号-2
-                </a>
-                <span class="mx-2">|</span>
-                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=62010202004801" target="_blank" rel="noopener noreferrer" class="hover:text-gray-400">
-                    甘公网安备62010202004801号
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // JavaScript for Scroll Reveal Animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const target = entry.target;
-
-                        // 确保目标是 HTMLElement 才能安全访问 .style 属性
-                        if (target instanceof HTMLElement) {
-                            // 使用行内 transition-delay 值来实现错开的动画效果
-                            const delay = target.style.transitionDelay ? parseFloat(target.style.transitionDelay) * 1000 : 0;
-                            
-                            // 仅在延迟后添加 'visible' 类
-                            setTimeout(() => {
-                                target.classList.add('visible');
-                            }, delay);
-                            
-                            observer.unobserve(target);
-                        }
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all elements with the 'scroll-reveal' class
-            document.querySelectorAll('.scroll-reveal').forEach(el => {
-                observer.observe(el);
-            });
-        });
-    </script>
 
 </body>
 </html>
